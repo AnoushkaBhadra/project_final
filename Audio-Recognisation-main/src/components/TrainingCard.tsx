@@ -15,6 +15,7 @@ const COLORS = {
 };
 
 export default function TrainingCard({ trainingClips, setTrainingClips }: TrainingCardProps) {
+  const API_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:5000';
   const [isRecording, setIsRecording] = useState(false);
   const [recordingTime, setRecordingTime] = useState(0);
   const [username, setUsername] = useState('');
@@ -46,9 +47,10 @@ export default function TrainingCard({ trainingClips, setTrainingClips }: Traini
       const formData = new FormData();
       formData.append('username', username);
       formData.append('clip_number', clipNum.toString());
-      formData.append('audio', clipBlob, `clip_${clipNum}.webm`);
+      // Backend expects field name 'audioFiles' for UploadFile list
+      formData.append('audioFiles', clipBlob, `clip_${clipNum}.webm`);
 
-      const response = await fetch('http://localhost:5000/enroll', {
+      const response = await fetch(`${API_URL}/enroll`, {
         method: 'POST',
         body: formData,
       });

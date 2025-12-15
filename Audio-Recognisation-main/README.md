@@ -118,6 +118,16 @@ start.bat
 This will:
 - Check for Python and Node.js
 - Install dependencies if needed
+
+Note on backends
+----------------
+
+There are two backend servers in this repository:
+
+- `speaker_recognition-main/server.py` (Flask) — the full speaker-recognition backend (enroll, predict, embeddings). Run this for the complete ML pipeline (recommended).
+- `Audio-Recognisation-main/server.py` (FastAPI) — a lightweight upload demo that accepts `audioFiles` and saves them to `uploaded_audio`.
+
+Don't run both servers on the same port (both default to `5000`). If you run the Flask backend (recommended), ensure your frontend is pointing to it (the default API URL is `http://localhost:5000`). To override, set `VITE_API_URL` in your frontend environment.
 - Start FastAPI backend in a new window (port 5000)
 - Start React frontend in a new window (port 5173)
 

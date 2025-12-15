@@ -5,10 +5,18 @@ interface TestingCardProps {
   trainingClips: Blob[];
 }
 
+interface TopMatch {
+  username: string;
+  similarity: number;
+}
+
 interface PredictionResponse {
   status: string;
   prediction: string;
   confidence: number;
+  threshold: number;
+  top_matches?: TopMatch[];
+  all_similarities?: Record<string, number>;
   message: string;
 }
 
@@ -21,6 +29,7 @@ const COLORS = {
 };
 
 export default function TestingCard({ trainingClips }: TestingCardProps) {
+  const API_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:5000';
   const [isRecording, setIsRecording] = useState(false);
   const [recordingTime, setRecordingTime] = useState(0);
   const [testClip, setTestClip] = useState<Blob | null>(null);
@@ -35,8 +44,6 @@ export default function TestingCard({ trainingClips }: TestingCardProps) {
 
   const MIN_DURATION = 3;
   const MAX_DURATION = 10;
-  // We assume training is complete if we have 4 clips locally, 
-  // though strictly it depends on backend state. reliable enough for UI.
   const isTrainingComplete = trainingClips.length >= 4;
 
   useEffect(() => {
@@ -56,7 +63,7 @@ export default function TestingCard({ trainingClips }: TestingCardProps) {
       const formData = new FormData();
       formData.append('audio', clip, 'test_clip.webm');
 
-      const response = await fetch('http://localhost:5000/predict', {
+      const response = await fetch(`${API_URL}/predict`, {
         method: 'POST',
         body: formData,
       });
@@ -150,6 +157,23 @@ export default function TestingCard({ trainingClips }: TestingCardProps) {
     }
   };
 
+  // Derive top matches (top 5) from either explicit `top_matches` or
+  // from `all_similarities` if the server returns only that mapping.
+  const topMatches = (() => {
+    if (!predictionData) return [] as TopMatch[];
+    if (predictionData.top_matches && predictionData.top_matches.length > 0) {
+      return predictionData.top_matches.slice(0, 5);
+    }
+    if (predictionData.all_similarities) {
+      const entries = Object.entries(predictionData.all_similarities)
+        .map(([username, similarity]) => ({ username, similarity }))
+        .sort((a, b) => b.similarity - a.similarity)
+        .slice(0, 5);
+      return entries as TopMatch[];
+    }
+    return [] as TopMatch[];
+  })();
+
   const getTimerColor = () => {
     if (recordingTime < MIN_DURATION) return `text-${COLORS.warning}-400`;
     return `text-${COLORS.primary}-400`;
@@ -175,7 +199,7 @@ export default function TestingCard({ trainingClips }: TestingCardProps) {
             Model Not Trained
           </h3>
           <p className={`text-${COLORS.gray}-400 text-center max-w-sm`}>
-            **A minimum of 4 training clips** is required before the system can analyze new speaker samples.
+            A minimum of 4 training clips is required before the system can analyze new speaker samples.
           </p>
         </div>
       ) : (
@@ -213,7 +237,7 @@ export default function TestingCard({ trainingClips }: TestingCardProps) {
                       <Mic className="w-12 h-12 text-white" />
                     </div>
                     <p className={`text-base text-${COLORS.gray}-300 max-w-sm mx-auto`}>
-                      Click below to record a sample and test for a **speaker match**.
+                      Click below to record a sample and test for a speaker match.
                     </p>
                     <button
                       onClick={startRecording}
@@ -271,12 +295,56 @@ export default function TestingCard({ trainingClips }: TestingCardProps) {
                       {predictionData?.prediction} Recognized! ✅
                     </h3>
                     <p className={`text-${COLORS.success}-300`}>
-                      Confidence: {(predictionData?.confidence || 0).toFixed(4)}
+                      Confidence: {((predictionData?.confidence || 0) * 100).toFixed(1)}%
                     </p>
                     <p className="text-gray-400 text-sm mt-2">
-                      Matched trained profile.
+                      Voice matched with trained profile.
                     </p>
                   </div>
+
+                  {/* Top Matches Table */}
+                  {topMatches && topMatches.length > 0 && (
+                    <div className="mt-6 pt-6 border-t border-emerald-700/50">
+                      <h4 className="text-sm font-semibold text-emerald-300 mb-4 text-center">
+                        Similarity Scores (Top {topMatches.length})
+                      </h4>
+                      <div className="space-y-3">
+                        {topMatches.map((match, idx) => {
+                          const isTopMatch = idx === 0;
+                          const aboveThreshold = match.similarity >= (predictionData?.threshold || 0.75);
+                          return (
+                            <div key={idx} className="space-y-1">
+                              <div className="flex justify-between items-center text-sm">
+                                <span className={`font-medium ${isTopMatch ? 'text-emerald-300' : 'text-gray-300'}`}>
+                                  {idx + 1}. {match.username}
+                                  {isTopMatch && ' 👑'}
+                                </span>
+                                <span className={`font-mono ${isTopMatch ? 'text-emerald-300' : 'text-gray-400'}`}>
+                                  {(match.similarity * 100).toFixed(1)}%
+                                </span>
+                              </div>
+                              <div className="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
+                                <div 
+                                  className={`h-2 rounded-full transition-all ${
+                                    isTopMatch 
+                                      ? 'bg-emerald-500' 
+                                      : aboveThreshold 
+                                        ? 'bg-emerald-700' 
+                                        : 'bg-gray-600'
+                                  }`}
+                                  style={{ width: `${match.similarity * 100}%` }}
+                                />
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                      <div className="mt-4 text-center text-xs text-gray-500">
+                        Threshold: {((predictionData?.threshold || 0.75) * 100).toFixed(0)}% 
+                        <span className="ml-2">• Bars above threshold are highlighted</span>
+                      </div>
+                    </div>
+                  )}
                 </div>
               ) : recognitionResult === 'no-match' ? (
                 <div className={`bg-${COLORS.failure}-900/50 border border-${COLORS.failure}-700 rounded-xl p-6`}>
@@ -286,12 +354,50 @@ export default function TestingCard({ trainingClips }: TestingCardProps) {
                       Speaker Not Recognized ❌
                     </h3>
                     <p className={`text-${COLORS.failure}-300`}>
-                      The voice sample does not match any trained speaker profile above threshold.
+                      No voice match found above threshold ({((predictionData?.threshold || 0.75) * 100).toFixed(0)}%).
                     </p>
                     <p className="text-gray-500 text-sm mt-2">
-                      Closest match confidence: {(predictionData?.confidence || 0).toFixed(4)}
+                      Closest match: {((predictionData?.confidence || 0) * 100).toFixed(1)}%
                     </p>
                   </div>
+
+                  {/* Top Matches Table for No-Match */}
+                  {topMatches && topMatches.length > 0 && (
+                    <div className="mt-6 pt-6 border-t border-rose-700/50">
+                      <h4 className="text-sm font-semibold text-rose-300 mb-4 text-center">
+                        Closest Matches (All Below Threshold)
+                      </h4>
+                      <div className="space-y-3">
+                        {topMatches.map((match, idx) => {
+                          const isClosest = idx === 0;
+                          return (
+                            <div key={idx} className="space-y-1">
+                              <div className="flex justify-between items-center text-sm">
+                                <span className={`font-medium ${isClosest ? 'text-rose-300' : 'text-gray-400'}`}>
+                                  {idx + 1}. {match.username}
+                                </span>
+                                <span className={`font-mono ${isClosest ? 'text-rose-300' : 'text-gray-500'}`}>
+                                  {(match.similarity * 100).toFixed(1)}%
+                                </span>
+                              </div>
+                              <div className="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
+                                <div 
+                                  className={`h-2 rounded-full transition-all ${
+                                    isClosest ? 'bg-rose-600' : 'bg-gray-600'
+                                  }`}
+                                  style={{ width: `${match.similarity * 100}%` }}
+                                />
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                      <div className="mt-4 text-center text-xs text-gray-500">
+                        Threshold: {((predictionData?.threshold || 0.75) * 100).toFixed(0)}% 
+                        <span className="ml-2">• None reached minimum confidence</span>
+                      </div>
+                    </div>
+                  )}
                 </div>
               ) : null}
             </div>

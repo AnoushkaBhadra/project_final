@@ -1,0 +1,226 @@
+2025-12-15 00:49:33,573 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.0.2:5000
+2025-12-15 00:49:33,574 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-15 00:49:33,576 - INFO -  * Restarting with stat
+2025-12-15 00:49:37,700 - WARNING -  * Debugger is active!
+2025-12-15 00:49:37,709 - INFO -  * Debugger PIN: 830-058-063
+2025-12-15 00:51:55,602 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.0.2:5000
+2025-12-15 00:51:55,611 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-15 00:51:55,613 - INFO -  * Restarting with stat
+2025-12-15 00:51:59,904 - WARNING -  * Debugger is active!
+2025-12-15 00:51:59,915 - INFO -  * Debugger PIN: 830-058-063
+2025-12-15 10:33:32,079 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.0.2:5000
+2025-12-15 10:33:32,080 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-15 10:33:32,081 - INFO -  * Restarting with stat
+2025-12-15 10:33:34,459 - WARNING -  * Debugger is active!
+2025-12-15 10:33:34,467 - INFO -  * Debugger PIN: 830-058-063
+2025-12-15 10:33:55,854 - INFO - 127.0.0.1 - - [15/Dec/2025 10:33:55] "[31m[1mPOST /enroll HTTP/1.1[0m" 400 -
+2025-12-15 10:38:55,431 - INFO -  * Detected change in 'E:\\New folder (2)\\project_final\\speaker_recognition-main\\server.py', reloading
+2025-12-15 10:38:55,873 - INFO -  * Restarting with stat
+2025-12-15 10:38:58,387 - WARNING -  * Debugger is active!
+2025-12-15 10:38:58,396 - INFO -  * Debugger PIN: 830-058-063
+2025-12-15 10:38:59,589 - INFO -  * Detected change in 'E:\\New folder (2)\\project_final\\speaker_recognition-main\\server.py', reloading
+2025-12-15 10:38:59,983 - INFO -  * Restarting with stat
+2025-12-15 10:39:02,537 - WARNING -  * Debugger is active!
+2025-12-15 10:39:02,544 - INFO -  * Debugger PIN: 830-058-063
+2025-12-15 10:39:05,916 - INFO -  * Detected change in 'E:\\New folder (2)\\project_final\\speaker_recognition-main\\server.py', reloading
+2025-12-15 10:39:06,314 - INFO -  * Restarting with stat
+2025-12-15 10:39:08,782 - WARNING -  * Debugger is active!
+2025-12-15 10:39:08,788 - INFO -  * Debugger PIN: 830-058-063
+2025-12-15 10:40:46,605 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.0.2:5000
+2025-12-15 10:40:46,605 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-15 10:40:46,607 - INFO -  * Restarting with stat
+2025-12-15 10:40:48,885 - WARNING -  * Debugger is active!
+2025-12-15 10:40:48,891 - INFO -  * Debugger PIN: 830-058-063
+2025-12-15 10:43:00,266 - INFO -  * Detected change in 'E:\\New folder (2)\\project_final\\speaker_recognition-main\\quick_enroll_test.py', reloading
+2025-12-15 10:43:00,674 - INFO -  * Restarting with stat
+2025-12-15 10:43:03,085 - WARNING -  * Debugger is active!
+2025-12-15 10:43:03,092 - INFO -  * Debugger PIN: 830-058-063
+2025-12-15 10:43:11,694 - INFO -  * Detected change in 'E:\\New folder (2)\\project_final\\speaker_recognition-main\\quick_enroll_test.py', reloading
+2025-12-15 10:43:12,093 - INFO -  * Restarting with stat
+2025-12-15 10:43:14,452 - WARNING -  * Debugger is active!
+2025-12-15 10:43:14,457 - INFO -  * Debugger PIN: 830-058-063
+2025-12-15 10:43:41,080 - INFO -  * Detected change in 'E:\\New folder (2)\\project_final\\speaker_recognition-main\\server.py', reloading
+2025-12-15 10:43:41,469 - INFO -  * Restarting with stat
+2025-12-15 10:43:43,917 - WARNING -  * Debugger is active!
+2025-12-15 10:43:43,923 - INFO -  * Debugger PIN: 830-058-063
+2025-12-15 10:43:52,534 - INFO -  * Detected change in 'E:\\New folder (2)\\project_final\\speaker_recognition-main\\server.py', reloading
+2025-12-15 10:43:52,958 - INFO -  * Restarting with stat
+2025-12-15 10:43:55,390 - WARNING -  * Debugger is active!
+2025-12-15 10:43:55,398 - INFO -  * Debugger PIN: 830-058-063
+2025-12-15 10:46:16,565 - INFO - Received file under form key 'audioFiles'
+2025-12-15 10:46:16,568 - INFO - Saved temporary upload to C:\Users\ANOUSHKA\AppData\Local\Temp\tmppycj_nv2.webm
+2025-12-15 10:46:16,568 - INFO - Converting C:\Users\ANOUSHKA\AppData\Local\Temp\tmppycj_nv2.webm -> uploads/enrollments\bhadra\clip_1.wav using ffmpeg
+2025-12-15 10:46:16,578 - ERROR - ffmpeg not found. Please install ffmpeg and ensure it is in PATH.
+2025-12-15 10:46:16,580 - INFO - 127.0.0.1 - - [15/Dec/2025 10:46:16] "[31m[1mPOST /enroll HTTP/1.1[0m" 400 -
+2025-12-15 10:48:55,782 - INFO -  * Detected change in 'E:\\New folder (2)\\project_final\\speaker_recognition-main\\server.py', reloading
+2025-12-15 10:48:56,174 - INFO -  * Restarting with stat
+2025-12-15 10:48:58,730 - WARNING -  * Debugger is active!
+2025-12-15 10:48:58,736 - INFO -  * Debugger PIN: 830-058-063
+2025-12-15 11:01:27,092 - INFO - Received file under form key 'audioFiles'
+2025-12-15 11:01:27,103 - INFO - Saved temporary upload to C:\Users\ANOUSHKA\AppData\Local\Temp\tmpagteg8l0.webm
+2025-12-15 11:01:27,103 - INFO - Converting C:\Users\ANOUSHKA\AppData\Local\Temp\tmpagteg8l0.webm -> uploads/enrollments\anoushka bhadra\clip_1.wav using ffmpeg
+2025-12-15 11:01:27,200 - INFO - Saved enrollment clip (converted): uploads/enrollments\anoushka bhadra\clip_1.wav
+2025-12-15 11:01:27,201 - INFO - 127.0.0.1 - - [15/Dec/2025 11:01:27] "POST /enroll HTTP/1.1" 200 -
+2025-12-15 11:01:34,713 - INFO - Received file under form key 'audioFiles'
+2025-12-15 11:01:34,722 - INFO - Saved temporary upload to C:\Users\ANOUSHKA\AppData\Local\Temp\tmpd6psqa2y.webm
+2025-12-15 11:01:34,723 - INFO - Converting C:\Users\ANOUSHKA\AppData\Local\Temp\tmpd6psqa2y.webm -> uploads/enrollments\anoushka bhadra\clip_2.wav using ffmpeg
+2025-12-15 11:01:34,818 - INFO - Saved enrollment clip (converted): uploads/enrollments\anoushka bhadra\clip_2.wav
+2025-12-15 11:01:34,819 - INFO - 127.0.0.1 - - [15/Dec/2025 11:01:34] "POST /enroll HTTP/1.1" 200 -
+2025-12-15 11:01:44,876 - INFO - Received file under form key 'audioFiles'
+2025-12-15 11:01:44,885 - INFO - Saved temporary upload to C:\Users\ANOUSHKA\AppData\Local\Temp\tmpz63esxva.webm
+2025-12-15 11:01:44,886 - INFO - Converting C:\Users\ANOUSHKA\AppData\Local\Temp\tmpz63esxva.webm -> uploads/enrollments\anoushka bhadra\clip_3.wav using ffmpeg
+2025-12-15 11:01:44,978 - INFO - Saved enrollment clip (converted): uploads/enrollments\anoushka bhadra\clip_3.wav
+2025-12-15 11:01:44,979 - INFO - 127.0.0.1 - - [15/Dec/2025 11:01:44] "POST /enroll HTTP/1.1" 200 -
+2025-12-15 11:01:52,335 - INFO - Received file under form key 'audioFiles'
+2025-12-15 11:01:52,345 - INFO - Saved temporary upload to C:\Users\ANOUSHKA\AppData\Local\Temp\tmpvurkuqab.webm
+2025-12-15 11:01:52,345 - INFO - Converting C:\Users\ANOUSHKA\AppData\Local\Temp\tmpvurkuqab.webm -> uploads/enrollments\anoushka bhadra\clip_4.wav using ffmpeg
+2025-12-15 11:01:52,432 - INFO - Saved enrollment clip (converted): uploads/enrollments\anoushka bhadra\clip_4.wav
+2025-12-15 11:01:52,433 - INFO - Generating embedding for anoushka bhadra...
+2025-12-15 11:01:57,236 - INFO - Saved embedding: embeddings\anoushka bhadra.npy
+2025-12-15 11:01:57,238 - INFO - 127.0.0.1 - - [15/Dec/2025 11:01:57] "POST /enroll HTTP/1.1" 200 -
+2025-12-15 11:02:04,666 - INFO - Received prediction file under form key 'audioFiles'
+2025-12-15 11:02:04,679 - INFO - Saved temporary upload to C:\Users\ANOUSHKA\AppData\Local\Temp\tmp5y1ajnb1.webm
+2025-12-15 11:02:04,679 - INFO - Converting C:\Users\ANOUSHKA\AppData\Local\Temp\tmp5y1ajnb1.webm -> uploads/predictions\prediction_20251215_110204_667159.wav using ffmpeg
+2025-12-15 11:02:04,777 - INFO - Saved prediction file (converted): uploads/predictions\prediction_20251215_110204_667159.wav
+2025-12-15 11:02:04,831 - INFO - Prediction: anoushka bhadra (confidence: 0.755)
+2025-12-15 11:02:04,832 - INFO - 127.0.0.1 - - [15/Dec/2025 11:02:04] "POST /predict HTTP/1.1" 200 -
+2025-12-15 11:07:03,271 - INFO - Received prediction file under form key 'audio'
+2025-12-15 11:07:03,280 - INFO - Saved temporary upload to C:\Users\ANOUSHKA\AppData\Local\Temp\tmpn0l72ffr.webm
+2025-12-15 11:07:03,280 - INFO - Converting C:\Users\ANOUSHKA\AppData\Local\Temp\tmpn0l72ffr.webm -> uploads/predictions\prediction_20251215_110703_271611.wav using ffmpeg
+2025-12-15 11:07:03,391 - INFO - Saved prediction file (converted): uploads/predictions\prediction_20251215_110703_271611.wav
+2025-12-15 11:07:03,437 - INFO - Prediction: Unknown (confidence: 0.740)
+2025-12-15 11:07:03,438 - INFO - 127.0.0.1 - - [15/Dec/2025 11:07:03] "POST /predict HTTP/1.1" 200 -
+2025-12-15 11:31:05,881 - INFO - Received file under form key 'audioFiles'
+2025-12-15 11:31:05,898 - INFO - Saved temporary upload to C:\Users\ANOUSHKA\AppData\Local\Temp\tmpks237esw.webm
+2025-12-15 11:31:05,899 - INFO - Converting C:\Users\ANOUSHKA\AppData\Local\Temp\tmpks237esw.webm -> uploads/enrollments\anoushka\clip_1.wav using ffmpeg
+2025-12-15 11:31:06,927 - INFO - Saved enrollment clip (converted): uploads/enrollments\anoushka\clip_1.wav
+2025-12-15 11:31:06,928 - INFO - 127.0.0.1 - - [15/Dec/2025 11:31:06] "POST /enroll HTTP/1.1" 200 -
+2025-12-15 11:31:18,647 - INFO - Received file under form key 'audioFiles'
+2025-12-15 11:31:18,671 - INFO - Saved temporary upload to C:\Users\ANOUSHKA\AppData\Local\Temp\tmpvk9d1xm_.webm
+2025-12-15 11:31:18,671 - INFO - Converting C:\Users\ANOUSHKA\AppData\Local\Temp\tmpvk9d1xm_.webm -> uploads/enrollments\anoushka\clip_2.wav using ffmpeg
+2025-12-15 11:31:18,823 - INFO - Saved enrollment clip (converted): uploads/enrollments\anoushka\clip_2.wav
+2025-12-15 11:31:18,824 - INFO - 127.0.0.1 - - [15/Dec/2025 11:31:18] "POST /enroll HTTP/1.1" 200 -
+2025-12-15 11:31:28,337 - INFO - Received file under form key 'audioFiles'
+2025-12-15 11:31:28,355 - INFO - Saved temporary upload to C:\Users\ANOUSHKA\AppData\Local\Temp\tmpg_0yj097.webm
+2025-12-15 11:31:28,355 - INFO - Converting C:\Users\ANOUSHKA\AppData\Local\Temp\tmpg_0yj097.webm -> uploads/enrollments\anoushka\clip_3.wav using ffmpeg
+2025-12-15 11:31:28,502 - INFO - Saved enrollment clip (converted): uploads/enrollments\anoushka\clip_3.wav
+2025-12-15 11:31:28,503 - INFO - 127.0.0.1 - - [15/Dec/2025 11:31:28] "POST /enroll HTTP/1.1" 200 -
+2025-12-15 11:31:39,560 - INFO - Received file under form key 'audioFiles'
+2025-12-15 11:31:39,581 - INFO - Saved temporary upload to C:\Users\ANOUSHKA\AppData\Local\Temp\tmpjwdi0shx.webm
+2025-12-15 11:31:39,582 - INFO - Converting C:\Users\ANOUSHKA\AppData\Local\Temp\tmpjwdi0shx.webm -> uploads/enrollments\anoushka\clip_4.wav using ffmpeg
+2025-12-15 11:31:39,733 - INFO - Saved enrollment clip (converted): uploads/enrollments\anoushka\clip_4.wav
+2025-12-15 11:31:39,733 - INFO - Generating embedding for anoushka...
+2025-12-15 11:31:39,939 - INFO - Saved embedding: embeddings\anoushka.npy
+2025-12-15 11:31:39,943 - INFO - 127.0.0.1 - - [15/Dec/2025 11:31:39] "POST /enroll HTTP/1.1" 200 -
+2025-12-15 11:31:50,405 - INFO - Received prediction file under form key 'audio'
+2025-12-15 11:31:50,423 - INFO - Saved temporary upload to C:\Users\ANOUSHKA\AppData\Local\Temp\tmpg8q4vjl7.webm
+2025-12-15 11:31:50,424 - INFO - Converting C:\Users\ANOUSHKA\AppData\Local\Temp\tmpg8q4vjl7.webm -> uploads/predictions\prediction_20251215_113150_406145.wav using ffmpeg
+2025-12-15 11:31:50,583 - INFO - Saved prediction file (converted): uploads/predictions\prediction_20251215_113150_406145.wav
+2025-12-15 11:31:50,692 - INFO - Prediction: anoushka (confidence: 0.886)
+2025-12-15 11:31:50,694 - INFO - 127.0.0.1 - - [15/Dec/2025 11:31:50] "POST /predict HTTP/1.1" 200 -
+2025-12-15 12:06:24,940 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.0.2:5000
+2025-12-15 12:06:24,941 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-15 12:06:24,943 - INFO -  * Restarting with stat
+2025-12-15 12:06:29,599 - WARNING -  * Debugger is active!
+2025-12-15 12:06:29,609 - INFO -  * Debugger PIN: 101-546-749
+2025-12-15 18:06:22,962 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.0.2:5000
+2025-12-15 18:06:22,963 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-15 18:06:22,965 - INFO -  * Restarting with stat
+2025-12-15 18:06:25,457 - WARNING -  * Debugger is active!
+2025-12-15 18:06:25,466 - INFO -  * Debugger PIN: 101-546-749
+2025-12-15 18:07:51,982 - INFO - Received file under form key 'audioFiles'
+2025-12-15 18:07:51,999 - INFO - Saved temporary upload to C:\Users\ANOUSHKA\AppData\Local\Temp\tmpop4i1us7.webm
+2025-12-15 18:07:52,000 - INFO - Converting C:\Users\ANOUSHKA\AppData\Local\Temp\tmpop4i1us7.webm -> uploads/enrollments\john_doe\clip_1.wav using ffmpeg
+2025-12-15 18:07:53,031 - INFO - Saved enrollment clip (converted): uploads/enrollments\john_doe\clip_1.wav
+2025-12-15 18:07:53,033 - INFO - 127.0.0.1 - - [15/Dec/2025 18:07:53] "POST /enroll HTTP/1.1" 200 -
+2025-12-15 18:08:04,092 - INFO - Received file under form key 'audioFiles'
+2025-12-15 18:08:04,110 - INFO - Saved temporary upload to C:\Users\ANOUSHKA\AppData\Local\Temp\tmpvde1dc5x.webm
+2025-12-15 18:08:04,111 - INFO - Converting C:\Users\ANOUSHKA\AppData\Local\Temp\tmpvde1dc5x.webm -> uploads/enrollments\john_doe\clip_2.wav using ffmpeg
+2025-12-15 18:08:04,254 - INFO - Saved enrollment clip (converted): uploads/enrollments\john_doe\clip_2.wav
+2025-12-15 18:08:04,255 - INFO - 127.0.0.1 - - [15/Dec/2025 18:08:04] "POST /enroll HTTP/1.1" 200 -
+2025-12-15 18:08:12,668 - INFO - Received file under form key 'audioFiles'
+2025-12-15 18:08:12,685 - INFO - Saved temporary upload to C:\Users\ANOUSHKA\AppData\Local\Temp\tmpxg91ahrm.webm
+2025-12-15 18:08:12,686 - INFO - Converting C:\Users\ANOUSHKA\AppData\Local\Temp\tmpxg91ahrm.webm -> uploads/enrollments\john_doe\clip_3.wav using ffmpeg
+2025-12-15 18:08:12,841 - INFO - Saved enrollment clip (converted): uploads/enrollments\john_doe\clip_3.wav
+2025-12-15 18:08:12,842 - INFO - 127.0.0.1 - - [15/Dec/2025 18:08:12] "POST /enroll HTTP/1.1" 200 -
+2025-12-15 18:09:06,925 - INFO - Received file under form key 'audioFiles'
+2025-12-15 18:09:06,945 - INFO - Saved temporary upload to C:\Users\ANOUSHKA\AppData\Local\Temp\tmphlvx83za.webm
+2025-12-15 18:09:06,946 - INFO - Converting C:\Users\ANOUSHKA\AppData\Local\Temp\tmphlvx83za.webm -> uploads/enrollments\john_doe\clip_4.wav using ffmpeg
+2025-12-15 18:09:07,059 - INFO - Saved enrollment clip (converted): uploads/enrollments\john_doe\clip_4.wav
+2025-12-15 18:09:07,060 - INFO - Generating embedding for john_doe...
+2025-12-15 18:09:14,930 - INFO - Saved embedding: embeddings\john_doe.npy
+2025-12-15 18:09:14,933 - INFO - 127.0.0.1 - - [15/Dec/2025 18:09:14] "POST /enroll HTTP/1.1" 200 -
+2025-12-15 18:09:34,665 - INFO - Received prediction file under form key 'audio'
+2025-12-15 18:09:34,681 - INFO - Saved temporary upload to C:\Users\ANOUSHKA\AppData\Local\Temp\tmp1bri7p10.webm
+2025-12-15 18:09:34,681 - INFO - Converting C:\Users\ANOUSHKA\AppData\Local\Temp\tmp1bri7p10.webm -> uploads/predictions\prediction_20251215_180934_666076.wav using ffmpeg
+2025-12-15 18:09:34,826 - INFO - Saved prediction file (converted): uploads/predictions\prediction_20251215_180934_666076.wav
+2025-12-15 18:09:35,103 - INFO - Prediction: john_doe (confidence: 0.789)
+2025-12-15 18:09:35,104 - INFO - 127.0.0.1 - - [15/Dec/2025 18:09:35] "POST /predict HTTP/1.1" 200 -
+2025-12-15 18:11:44,558 - INFO -  * Detected change in 'E:\\New folder (3)\\project_final\\speaker_recognition-main\\server.py', reloading
+2025-12-15 18:11:45,374 - INFO -  * Restarting with stat
+2025-12-15 18:11:49,330 - WARNING -  * Debugger is active!
+2025-12-15 18:11:49,341 - INFO -  * Debugger PIN: 101-546-749
+2025-12-15 18:11:51,779 - INFO -  * Detected change in 'E:\\New folder (3)\\project_final\\speaker_recognition-main\\tests\\test_predict.py', reloading
+2025-12-15 18:11:52,301 - INFO -  * Restarting with stat
+2025-12-15 18:11:56,315 - WARNING -  * Debugger is active!
+2025-12-15 18:11:56,324 - INFO -  * Debugger PIN: 101-546-749
+2025-12-15 18:20:53,171 - INFO -  * Detected change in 'E:\\New folder (3)\\project_final\\speaker_recognition-main\\server.py', reloading
+2025-12-15 18:20:53,617 - INFO -  * Restarting with stat
+2025-12-15 18:20:56,877 - WARNING -  * Debugger is active!
+2025-12-15 18:20:56,887 - INFO -  * Debugger PIN: 101-546-749
+2025-12-15 18:23:31,154 - INFO -  * Detected change in 'E:\\New folder (3)\\project_final\\speaker_recognition-main\\tests\\test_predict.py', reloading
+2025-12-15 18:23:31,675 - INFO -  * Restarting with stat
+2025-12-15 18:23:35,989 - WARNING -  * Debugger is active!
+2025-12-15 18:23:35,999 - INFO -  * Debugger PIN: 101-546-749
+2025-12-15 18:27:33,949 - INFO - Received file under form key 'audioFiles'
+2025-12-15 18:27:33,965 - INFO - Saved temporary upload to C:\Users\ANOUSHKA\AppData\Local\Temp\tmp94jms1cf.webm
+2025-12-15 18:27:33,966 - INFO - Converting C:\Users\ANOUSHKA\AppData\Local\Temp\tmp94jms1cf.webm -> uploads/enrollments\bhadra\clip_1.wav using ffmpeg
+2025-12-15 18:27:34,129 - INFO - Saved enrollment clip (converted): uploads/enrollments\bhadra\clip_1.wav
+2025-12-15 18:27:34,131 - INFO - 127.0.0.1 - - [15/Dec/2025 18:27:34] "POST /enroll HTTP/1.1" 200 -
+2025-12-15 18:27:43,911 - INFO - Received file under form key 'audioFiles'
+2025-12-15 18:27:43,931 - INFO - Saved temporary upload to C:\Users\ANOUSHKA\AppData\Local\Temp\tmpk33a8rsv.webm
+2025-12-15 18:27:43,931 - INFO - Converting C:\Users\ANOUSHKA\AppData\Local\Temp\tmpk33a8rsv.webm -> uploads/enrollments\bhadra\clip_2.wav using ffmpeg
+2025-12-15 18:27:44,081 - INFO - Saved enrollment clip (converted): uploads/enrollments\bhadra\clip_2.wav
+2025-12-15 18:27:44,083 - INFO - 127.0.0.1 - - [15/Dec/2025 18:27:44] "POST /enroll HTTP/1.1" 200 -
+2025-12-15 18:27:55,829 - INFO - Received file under form key 'audioFiles'
+2025-12-15 18:27:55,844 - INFO - Saved temporary upload to C:\Users\ANOUSHKA\AppData\Local\Temp\tmp4s815oq4.webm
+2025-12-15 18:27:55,844 - INFO - Converting C:\Users\ANOUSHKA\AppData\Local\Temp\tmp4s815oq4.webm -> uploads/enrollments\bhadra\clip_3.wav using ffmpeg
+2025-12-15 18:27:55,992 - INFO - Saved enrollment clip (converted): uploads/enrollments\bhadra\clip_3.wav
+2025-12-15 18:27:55,993 - INFO - 127.0.0.1 - - [15/Dec/2025 18:27:55] "POST /enroll HTTP/1.1" 200 -
+2025-12-15 18:28:07,457 - INFO - Received file under form key 'audioFiles'
+2025-12-15 18:28:07,483 - INFO - Saved temporary upload to C:\Users\ANOUSHKA\AppData\Local\Temp\tmph81a22mq.webm
+2025-12-15 18:28:07,483 - INFO - Converting C:\Users\ANOUSHKA\AppData\Local\Temp\tmph81a22mq.webm -> uploads/enrollments\bhadra\clip_4.wav using ffmpeg
+2025-12-15 18:28:07,643 - INFO - Saved enrollment clip (converted): uploads/enrollments\bhadra\clip_4.wav
+2025-12-15 18:28:07,644 - INFO - Generating embedding for bhadra...
+2025-12-15 18:28:11,061 - INFO - Saved embedding: embeddings\bhadra.npy
+2025-12-15 18:28:11,063 - INFO - 127.0.0.1 - - [15/Dec/2025 18:28:11] "POST /enroll HTTP/1.1" 200 -
+2025-12-15 18:28:17,205 - INFO - Received prediction file under form key 'audio'
+2025-12-15 18:28:17,222 - INFO - Saved temporary upload to C:\Users\ANOUSHKA\AppData\Local\Temp\tmp3le3ef6u.webm
+2025-12-15 18:28:17,222 - INFO - Converting C:\Users\ANOUSHKA\AppData\Local\Temp\tmp3le3ef6u.webm -> uploads/predictions\prediction_20251215_182817_206501.wav using ffmpeg
+2025-12-15 18:28:17,371 - INFO - Saved prediction file (converted): uploads/predictions\prediction_20251215_182817_206501.wav
+2025-12-15 18:28:17,502 - INFO - Prediction: anoushka bhadra (confidence: 0.827)
+2025-12-15 18:28:17,504 - INFO - 127.0.0.1 - - [15/Dec/2025 18:28:17] "POST /predict HTTP/1.1" 200 -
+2025-12-15 18:29:38,887 - INFO - Received prediction file under form key 'audio'
+2025-12-15 18:29:38,909 - INFO - Saved temporary upload to C:\Users\ANOUSHKA\AppData\Local\Temp\tmpfej3w471.webm
+2025-12-15 18:29:38,909 - INFO - Converting C:\Users\ANOUSHKA\AppData\Local\Temp\tmpfej3w471.webm -> uploads/predictions\prediction_20251215_182938_888626.wav using ffmpeg
+2025-12-15 18:29:39,055 - INFO - Saved prediction file (converted): uploads/predictions\prediction_20251215_182938_888626.wav
+2025-12-15 18:29:39,138 - INFO - Prediction: bhadra (confidence: 0.833)
+2025-12-15 18:29:39,139 - INFO - 127.0.0.1 - - [15/Dec/2025 18:29:39] "POST /predict HTTP/1.1" 200 -

@@ -55,6 +55,38 @@ Notes & configuration:
 - **Clips required for enrollment:** 4 (variable `REQUIRED_CLIPS` in `server.py`).
 - **Similarity threshold:** Default is 0.75 (`SIMILARITY_THRESHOLD` in `server.py`). Matches require similarity >= threshold.
 
+Additional notes:
+
+- This server uses `ffmpeg` to convert non-WAV uploads (e.g., `.webm`) to WAV before extracting embeddings. Please ensure `ffmpeg` is installed and available on your PATH (https://ffmpeg.org/download.html). Without `ffmpeg`, uploads in other formats will fail conversion.
+- For quick debugging there's a `GET /list-uploads` endpoint that returns files stored under `uploads/`.
+
+Installing ffmpeg (Windows)
+---------------------------
+
+Recommended quick install methods:
+
+- Using `winget` (Windows 10/11):
+
+```powershell
+winget install -e --id Gyan.FFmpeg
+```
+
+- Using `choco` (Chocolatey):
+
+```powershell
+choco install ffmpeg -y
+```
+
+- Or download a static build from https://ffmpeg.org/download.html and add the `bin` folder to your `PATH`.
+
+Verify installation:
+
+```powershell
+ffmpeg -version
+```
+
+If this command fails, add the folder with `ffmpeg.exe` to your system PATH and restart your terminal/IDE.
+
 If you change configuration values in `server.py` (e.g., `REQUIRED_CLIPS`, `SIMILARITY_THRESHOLD`, or `MAX_FILE_SIZE`), update this README accordingly.
 
 ## Testing

@@ -22,9 +22,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Create directory to store uploaded files
-UPLOAD_FOLDER = "uploaded_audio"
+# Create directory to store uploaded files (always inside project dir)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+UPLOAD_FOLDER = os.path.join(BASE_DIR, "uploaded_audio")
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+# Allow overriding backend port via env var (e.g., BACKEND_PORT or PORT)
+BACKEND_PORT = int(os.environ.get('BACKEND_PORT') or os.environ.get('PORT') or 5000)
 
 
 @app.post("/enroll")
@@ -128,9 +132,9 @@ if __name__ == "__main__":
     print("🎙️  Audio Recognition FastAPI Server")
     print("=" * 60)
     print(f"📁 Upload folder: {os.path.abspath(UPLOAD_FOLDER)}")
-    print(f"🌐 Server URL: http://localhost:5000")
-    print(f"📚 API Docs: http://localhost:5000/docs")
-    print(f"📖 ReDoc: http://localhost:5000/redoc")
+    print(f"🌐 Server URL: http://localhost:{BACKEND_PORT}")
+    print(f"📚 API Docs: http://localhost:{BACKEND_PORT}/docs")
+    print(f"📖 ReDoc: http://localhost:{BACKEND_PORT}/redoc")
     print("\nEndpoints:")
     print("  - POST /enroll  → Upload audio files")
     print("  - GET  /health  → Health check")
@@ -140,6 +144,6 @@ if __name__ == "__main__":
     uvicorn.run(
         app,
         host="0.0.0.0",
-        port=5000,
+        port=BACKEND_PORT,
         log_level="info"
     )

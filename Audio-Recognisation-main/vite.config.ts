@@ -7,4 +7,17 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  server: {
+    // Proxy API routes to the backend server during development
+    proxy: {
+      '/enroll': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+      },
+      '/predict': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+      },
+    },
+  },
 });

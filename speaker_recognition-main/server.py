@@ -122,6 +122,11 @@ def save_uploaded_and_convert(file_storage, target_wav_path):
     
     # Not WAV, so convert
     try:
+        # Ensure ffmpeg is available before attempting conversion
+        import shutil as _shutil
+        if _shutil.which('ffmpeg') is None:
+            logging.error('ffmpeg not found in PATH. Cannot convert non-WAV uploads.')
+            return False
         fd, temp_path = tempfile.mkstemp(suffix=ext)
         os.close(fd)
         file_storage.save(temp_path)
@@ -194,14 +199,27 @@ def enroll_speaker():
                 'message': f'clip_number must be between 1 and {REQUIRED_CLIPS}'
             }), 400
         
-        # Check audio file
-        if 'audio' not in request.files:
+        # Check audio file. Accept either 'audio' (single) or 'audioFiles' (frontend uses this name)
+        file = None
+        if 'audio' in request.files:
+            file = request.files['audio']
+            logging.info("Received file under form key 'audio'")
+        elif 'audioFiles' in request.files:
+            files = request.files.getlist('audioFiles')
+            if files:
+                file = files[0]
+                logging.info("Received file under form key 'audioFiles'")
+        elif 'audioFiles[]' in request.files:
+            files = request.files.getlist('audioFiles[]')
+            if files:
+                file = files[0]
+                logging.info("Received file under form key 'audioFiles[]'")
+
+        if file is None:
             return jsonify({
                 'status': 'error',
                 'message': 'No audio file provided'
             }), 400
-        
-        file = request.files['audio']
         
         if file.filename == '':
             return jsonify({
@@ -296,14 +314,27 @@ def predict_speaker():
     Compares against all enrolled speakers
     """
     try:
-        # Check audio file
-        if 'audio' not in request.files:
+        # Check audio file. Accept either 'audio' or 'audioFiles' (frontend uses 'audioFiles')
+        file = None
+        if 'audio' in request.files:
+            file = request.files['audio']
+            logging.info("Received prediction file under form key 'audio'")
+        elif 'audioFiles' in request.files:
+            files = request.files.getlist('audioFiles')
+            if files:
+                file = files[0]
+                logging.info("Received prediction file under form key 'audioFiles'")
+        elif 'audioFiles[]' in request.files:
+            files = request.files.getlist('audioFiles[]')
+            if files:
+                file = files[0]
+                logging.info("Received prediction file under form key 'audioFiles[]'")
+
+        if file is None:
             return jsonify({
                 'status': 'error',
                 'message': 'No audio file provided'
             }), 400
-        
-        file = request.files['audio']
         
         if file.filename == '':
             return jsonify({
@@ -381,12 +412,20 @@ def predict_speaker():
         except:
             pass
         
+        # Build top_matches list (sorted by similarity desc, top 5)
+        sorted_matches = sorted(similarities.items(), key=lambda kv: kv[1], reverse=True)
+        top_matches = [
+            {'username': username, 'similarity': float(sim)}
+            for username, sim in sorted_matches[:5]
+        ]
+
         return jsonify({
             'status': 'success',
             'prediction': prediction,
             'confidence': float(best_similarity),
             'threshold': SIMILARITY_THRESHOLD,
             'all_similarities': similarities,
+            'top_matches': top_matches,
             'message': message
         }), 200
         
@@ -470,6 +509,30 @@ def request_entity_too_large(error):
         'status': 'error',
         'message': 'File too large. Maximum size is 10MB'
     }), 413
+
+
+@app.route('/list-uploads', methods=['GET'])
+def list_uploads():
+    """Return a simple listing of files stored in uploads/ for debugging"""
+    try:
+        files_info = []
+        for root, dirs, files in os.walk(UPLOAD_FOLDER):
+            for fname in files:
+                path = os.path.join(root, fname)
+                rel = os.path.relpath(path, UPLOAD_FOLDER)
+                files_info.append({
+                    'path': rel.replace('\\', '/'),
+                    'size_bytes': os.path.getsize(path)
+                })
+
+        return jsonify({
+            'status': 'success',
+            'count': len(files_info),
+            'files': files_info
+        }), 200
+    except Exception as e:
+        logging.error(f"Error listing uploads: {e}")
+        return jsonify({'status': 'error', 'message': str(e)}), 500
 
 if __name__ == '__main__':
     # Ensure folders exist

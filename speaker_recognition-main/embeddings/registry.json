@@ -1,0 +1,76 @@
+{
+  "ajay devgan": {
+    "enrolled_date": "2025-12-15T00:51:40.834760",
+    "clips_count": 3,
+    "embedding_file": "ajay devgan.npy",
+    "migrated_from": "Ajay Devgan"
+  },
+  "akshay kumar": {
+    "enrolled_date": "2025-12-15T00:51:41.014257",
+    "clips_count": 3,
+    "embedding_file": "akshay kumar.npy",
+    "migrated_from": "Akshay Kumar"
+  },
+  "amir khan": {
+    "enrolled_date": "2025-12-15T00:51:41.145917",
+    "clips_count": 3,
+    "embedding_file": "amir khan.npy",
+    "migrated_from": "Amir Khan"
+  },
+  "amitabh bacchan": {
+    "enrolled_date": "2025-12-15T00:51:41.333108",
+    "clips_count": 3,
+    "embedding_file": "amitabh bacchan.npy",
+    "migrated_from": "Amitabh Bacchan"
+  },
+  "anoushka": {
+    "enrolled_date": "2025-12-15T11:31:39.942145",
+    "clips_count": 4,
+    "embedding_file": "anoushka.npy"
+  },
+  "ar rahman": {
+    "enrolled_date": "2025-12-15T00:51:41.660759",
+    "clips_count": 3,
+    "embedding_file": "ar rahman.npy",
+    "migrated_from": "AR Rahman"
+  },
+  "ayushman": {
+    "enrolled_date": "2025-12-15T00:51:41.805342",
+    "clips_count": 3,
+    "embedding_file": "ayushman.npy",
+    "migrated_from": "Ayushman"
+  },
+  "irfan khan": {
+    "enrolled_date": "2025-12-15T00:51:41.967699",
+    "clips_count": 3,
+    "embedding_file": "irfan khan.npy",
+    "migrated_from": "Irfan Khan"
+  },
+  "john abhraham": {
+    "enrolled_date": "2025-12-15T00:51:42.103003",
+    "clips_count": 3,
+    "embedding_file": "john abhraham.npy",
+    "migrated_from": "John Abhraham"
+  },
+  "saumi": {
+    "enrolled_date": "2025-12-15T00:51:42.269008",
+    "clips_count": 3,
+    "embedding_file": "saumi.npy",
+    "migrated_from": "Saumi"
+  },
+  "anoushka bhadra": {
+    "enrolled_date": "2025-12-15T11:01:57.237127",
+    "clips_count": 4,
+    "embedding_file": "anoushka bhadra.npy"
+  },
+  "john_doe": {
+    "enrolled_date": "2025-12-15T18:09:14.931966",
+    "clips_count": 4,
+    "embedding_file": "john_doe.npy"
+  },
+  "bhadra": {
+    "enrolled_date": "2025-12-15T18:28:11.061878",
+    "clips_count": 4,
+    "embedding_file": "bhadra.npy"
+  }
+}
