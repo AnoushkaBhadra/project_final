@@ -224,3 +224,15 @@
 2025-12-15 18:29:39,055 - INFO - Saved prediction file (converted): uploads/predictions\prediction_20251215_182938_888626.wav
 2025-12-15 18:29:39,138 - INFO - Prediction: bhadra (confidence: 0.833)
 2025-12-15 18:29:39,139 - INFO - 127.0.0.1 - - [15/Dec/2025 18:29:39] "POST /predict HTTP/1.1" 200 -
+2025-12-16 09:24:18,186 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.0.2:5000
+2025-12-16 09:24:18,187 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-16 09:24:18,189 - INFO -  * Restarting with stat
+2025-12-16 09:24:21,674 - WARNING -  * Debugger is active!
+2025-12-16 09:24:21,683 - INFO -  * Debugger PIN: 101-546-749
+2025-12-16 09:27:26,746 - INFO -  * Detected change in 'E:\\New folder (3)\\project_final\\speaker_recognition-main\\server.py', reloading
+2025-12-16 09:27:27,328 - INFO -  * Restarting with stat
+2025-12-16 09:27:32,039 - WARNING -  * Debugger is active!
+2025-12-16 09:27:32,048 - INFO -  * Debugger PIN: 101-546-749

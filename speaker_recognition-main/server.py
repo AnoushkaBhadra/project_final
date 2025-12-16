@@ -371,12 +371,88 @@ def predict_speaker():
         # Load registry
         registry = load_registry()
         
+        # Optional: allow caller to test against a specific username
+        requested_user = request.form.get('username', '').strip().lower()
+        
+        # If caller requested a specific username, only compare to that user
+        if requested_user:
+            logging.info(f"Prediction requested for specific user: {requested_user}")
+            # Not enrolled
+            if requested_user not in registry:
+                try:
+                    os.remove(filepath)
+                except:
+                    pass
+                return jsonify({
+                    'status': 'success',
+                    'prediction': 'Unknown',
+                    'confidence': 0.0,
+                    'threshold': SIMILARITY_THRESHOLD,
+                    'all_similarities': {},
+                    'top_matches': [],
+                    'message': 'Speaker not recognized. Please enroll'
+                }), 200
+
+            # Load that user's embedding and compute similarity
+            embedding_path = os.path.join(EMBEDDINGS_FOLDER, f"{requested_user}.npy")
+            if not os.path.exists(embedding_path):
+                try:
+                    os.remove(filepath)
+                except:
+                    pass
+                return jsonify({
+                    'status': 'success',
+                    'prediction': 'Unknown',
+                    'confidence': 0.0,
+                    'threshold': SIMILARITY_THRESHOLD,
+                    'all_similarities': {},
+                    'top_matches': [],
+                    'message': 'Speaker not recognized. Please enroll'
+                }), 200
+
+            stored_embedding = np.load(embedding_path)
+            similarity = compute_similarity(test_embedding, stored_embedding)
+            similarities = {requested_user: float(similarity)}
+            top_matches = [{'username': requested_user, 'similarity': float(similarity)}]
+
+            if similarity >= SIMILARITY_THRESHOLD:
+                prediction = requested_user
+                message = f"Matched with {requested_user}"
+            else:
+                prediction = "Unknown"
+                message = 'Speaker not recognized. Please enroll'
+
+            logging.info(f"Prediction for {requested_user}: {prediction} (confidence: {similarity:.3f})")
+
+            try:
+                os.remove(filepath)
+            except:
+                pass
+
+            return jsonify({
+                'status': 'success',
+                'prediction': prediction,
+                'confidence': float(similarity),
+                'threshold': SIMILARITY_THRESHOLD,
+                'all_similarities': similarities,
+                'top_matches': top_matches,
+                'message': message
+            }), 200
+
+        # If there are no enrolled users, return a clear message to enroll
         if len(registry) == 0:
+            try:
+                os.remove(filepath)
+            except:
+                pass
             return jsonify({
                 'status': 'success',
                 'prediction': 'Unknown',
                 'confidence': 0.0,
-                'message': 'No enrolled users in system'
+                'threshold': SIMILARITY_THRESHOLD,
+                'all_similarities': {},
+                'top_matches': [],
+                'message': 'Speaker not recognized. Please enroll'
             }), 200
         
         # Compare with all enrolled speakers
@@ -402,7 +478,7 @@ def predict_speaker():
             message = f"Matched with {best_match}"
         else:
             prediction = "Unknown"
-            message = "No match found above threshold"
+            message = 'Speaker not recognized. Please enroll'
         
         logging.info(f"Prediction: {prediction} (confidence: {best_similarity:.3f})")
         
